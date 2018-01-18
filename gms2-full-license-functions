@@ -1,0 +1,92 @@
+http://www.masharcade.com/gml-scripts-not-available-with-the-game-maker-studio-2-trial-license/~
+With thanks to Mash on the Discord server.
+
+Game Maker Studio 2 gives you a wealth of resources to use, but here are some things that are NOT available with just a Trial License:
+
+    Importing old projects
+    Exporting YYZ projects
+    Non-bitmap sprites (SWF and Spine)
+    Source Control
+    Audio Groups
+    Configurations
+    Texture Groups
+
+Below is a list of the scripts NOT available with just a Trial License:
+
+    audio_create_buffer_sound
+    audio_create_play_queue
+    audio_create_stream
+    audio_destroy_stream
+    audio_free_buffer_sound
+    audio_free_play_queue
+    audio_queue_soound
+    audio_enable_swf_aa
+    audio_get_swf_aa_level
+    audio_set_swf_aa_level
+    draw_skeleton
+    draw_sekelton_collision
+    draw_skeleton_instance
+    draw_skeleton_time
+    font_add
+    font_add_sprite
+    font_add_sprite_ext
+    font_delete
+    font_replace_sprite
+    font_replace_sprite_ext
+    external_call
+    external_define
+    external_free
+    path_add
+    path_delete
+    path_duplicate
+    room_add
+    room_duplicate
+    shaders_are_supported
+    shader_current
+    shader_enable_corner_id
+    shader_get_sampler_index
+    shader_get_uniform
+    shader_is_compiled
+    shader_reset
+    shader_set
+    shader_set_uniform_f
+    shader_set_uniform_f_array
+    shader_set_uniform_i
+    shader_set_uniform_i_array
+    shader_set_uniform_matrix
+    shader_set_uniform_matrix_array
+    sprite_add
+    sprite_add_from_surface
+    sprite_create_from_surface
+    sprite_delete
+    sprite_duplicate
+    sprite_replace
+    skeleton_animation_clear
+    skeleton_animation_get
+    skeleton_animation_get_duration
+    skeleton_animation_get_ext
+    skeleton_animation_get_frame
+    skeleton_animation_get_frames
+    skeleton_animation_list
+    skeleton_animation_mix
+    skeleton_animation_set
+    skeleton_animation_set_ext
+    skeleton_animation_set_frame
+    skeleton_attachment_create
+    skeleton_attachment_get
+    skeleton_attachment_set
+    skeleton_bone_data_get
+    skeleton_bone_data_set
+    skeleton_bone_state_get
+    skeleton_bone_state_set
+    skeleton_collision_draw_set
+    skeleton_get_bounds
+    skeleton_get_minmax
+    skeleton_get_num_bounds
+    skeleton_skin_get
+    skeleton_skin_list
+    skeleton_skin_set
+    skeleton_slot_data
+    timeline_add
+    timeline_delete
+
