@@ -1,0 +1,15 @@
+Begin Step Event
+Step Event
+Movement due to internal variables (speed/direction etc.)
+End Step Event
+
+Pre Draw Event
+per camera: {
+  Draw Begin Event
+  Draw Event
+  Draw End Event
+}
+Post Draw Event
+Draw GUI Begin Event
+Draw GUI Event
+Draw GUI End Event
