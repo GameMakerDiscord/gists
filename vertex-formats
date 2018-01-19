@@ -1,0 +1,7 @@
+cheat sheet for vertex format sizes:
+position 2D - four bytes per dimension,  8 bytes overall - 2x f32
+position 3D - four bytes per dimension, 12 bytes overall - 3x f32
+texcoord    - four bytes per dimension,  8 bytes overall - 2x f32
+normal      - four bytes per dimension, 12 bytes overall - 3x f32
+colour      -  one byte  per dimension,  4 bytes overall - 4x u8
+ONE triangle is THREE vertices in pr_trianglelist
