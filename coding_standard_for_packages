@@ -1,0 +1,30 @@
+__Assets__
+
+sExampleSprite
+tExampleTileset
+pExamplePath
+tmExampleTimeline
+example_script() <-- for consistency with GM's internal functions
+shExampleShader
+fExampleFont
+oExampleObject
+rExampleRoom
+"Example Layer" <-- suggested but not required
+
+
+__Values__
+
+_local_variable
+instance_variable
+global.global_variable
+EXAMPLE_CONSTANT
+E_EXAMPLE_ENUM { TERM_0, TERM_1, NUM }
+
+
+__Braces__ <-- suggested but not required
+
+if ( k_and_r ) {
+    //Fun times
+} else {
+    //Sad panda
+}
