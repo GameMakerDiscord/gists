@@ -1,18 +1,20 @@
 __Assets__
+* PascalCase with lowercase type prefix
 
 sExampleSprite
 tExampleTileset
 pExamplePath
 tmExampleTimeline
-example_script() <-- for consistency with GM's internal functions
+example_script() <-- snake_case for consistency with GM's internal functions
 shExampleShader
 fExampleFont
 oExampleObject
 rExampleRoom
-"Example Layer" <-- suggested but not required
+"ExampleLayer" <-- suggested but not required
 
 
 __Values__
+* snake_case, ALL_CAPS for constants
 
 _local_variable
 instance_variable
