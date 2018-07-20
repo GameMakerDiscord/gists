@@ -1,0 +1,11 @@
+bm_zero            = 1
+bm_one             = 2
+bm_src_colour      = 3
+bm_inv_src_colour  = 4
+bm_src_alpha       = 5
+bm_inv_src_alpha   = 6
+bm_dest_alpha      = 7
+bm_inv_dest_alpha  = 8
+bm_dest_colour     = 9
+bm_inv_dest_colour = 10
+bm_src_alpha_sat   = 11
