@@ -1,0 +1,73 @@
+//##### Vertex Shader
+#define    MATRIX_VIEW                  0
+#define    MATRIX_PROJECTION            1
+#define    MATRIX_WORLD                 2
+#define    MATRIX_WORLD_VIEW            3
+#define    MATRIX_WORLD_VIEW_PROJECTION 4
+#define    MATRICES_MAX                 5 
+#define    MAX_VS_LIGHTS                8
+
+cbuffer gm_VSTransformBuffer
+{
+    float4x4 gm_Matrices[MATRICES_MAX];
+};
+
+cbuffer gm_VSMaterialConstantBuffer
+{
+    bool  gm_LightingEnabled;
+    bool  gm_VS_FogEnabled;
+    float gm_FogStart;
+    float gm_RcpFogRange;
+};
+
+cbuffer gm_VSLightingConstantBuffer
+{
+    float4 gm_AmbientColour;                    // rgb=colour, a=1
+    float3 gm_Lights_Direction[MAX_VS_LIGHTS];  // normalised direction
+    float4 gm_Lights_PosRange [MAX_VS_LIGHTS];  // X,Y,Z position,  W range
+    float4 gm_Lights_Colour   [MAX_VS_LIGHTS];  // rgb=colour, a=1
+};
+
+struct VS {
+    float4 Position : POSITION0;
+    float2 Texcoord : TEXCOORD0;
+};
+
+struct PS {
+    float4 Position : SV_Position0;
+    float2 Texcoord : TEXCOORD0;
+};
+
+PS main(VS In) {
+    PS Out;
+        Out.Position = mul(gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION], In.Position);
+        Out.Texcoord = In.Texcoord;
+    return Out;
+}
+
+
+
+
+
+//###### Frag Shader
+Texture2D gm_BaseTextureObject : register(t0);
+SamplerState gm_BaseTexture    : register(s0);
+
+cbuffer gm_PSMaterialConstantBuffer
+{
+    bool   gm_PS_FogEnabled;
+    float4 gm_FogColour;
+    bool   gm_AlphaTestEnabled;
+    float4 gm_AlphaRefValue;
+};
+
+struct PS {
+    float4 Position : SV_Position0;
+    float2 Texcoord : TEXCOORD0;
+};
+
+float4 main(PS In) : SV_Target0 {
+    float4 Out = gm_BaseTextureObject.Sample(gm_BaseTexture, In.Texcoord);
+    
+    return Out;
+}
