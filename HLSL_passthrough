@@ -1,0 +1,53 @@
+//####### Vertex Shader
+struct Attribute
+{
+    float4 vPosition : POSITION;
+    float4 vColor    : COLOR0;
+    float2 vTexcoord : TEXCOORD0;
+};
+
+struct Fragment
+{
+    float4 vPosition : SV_POSITION;
+    float4 vColor    : COLOR0;
+    float2 vCoord    : TEXCOORD0;
+};
+
+Fragment main(Attribute INPUT)
+{
+    Fragment OUTPUT;
+
+    float4 matrixWVP = mul(gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION], INPUT.vPosition);
+
+    OUTPUT.vPosition = matrixWVP;
+    OUTPUT.vColor    = INPUT.vColor;
+    OUTPUT.vCoord    = INPUT.vTexcoord; 
+
+    return OUTPUT;
+}
+
+
+
+//####### Frag Shader
+struct Fragment
+{
+    float4 vPosition : SV_POSITION;
+    float4 vColor    : COLOR0;
+    float2 vCoord    : TEXCOORD0;
+};
+
+struct Render
+{
+    float4 Col1 : SV_TARGET0;
+    float4 Col2 : SV_TARGET1;
+};
+
+Render main(Fragment INPUT)
+{    
+    Render OUTPUT;
+    float4 Color = INPUT.vColor * gm_BaseTextureObject.Sample(gm_BaseTexture,INPUT.vCoord);
+    OUTPUT.Col1 = Color;
+    
+    OUTPUT.Col2 = Color;
+    return OUTPUT;
+}
